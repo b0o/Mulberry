@@ -35,7 +35,7 @@ Describe("the awesome foobar plugin", function()
 
   It("always calls you back", function()
     local foo = require'foo'
-    Expect(foo.someFooFunction).To.Not.EvaluateTo(0xF00)
+    Expect(foo.someFooFunction).To.EvaluateTo(0xF00)
   end)
 end)
 ```
