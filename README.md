@@ -10,10 +10,8 @@ An example Mulberry test suite:
 Describe("the awesome foobar plugin", function()
   It("can do the foo.do", function()
     local foo = require'foo'
-
-    let myFoo = { lol: 'wut', yes: 'no' }
+    local myFoo = { lol: 'wut', yes: 'no' }
     local bar = foo.do(myFoo)
-
     Expect(bar).To.Be.A.ListLike()
   end)
 
