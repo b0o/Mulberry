@@ -1,4 +1,4 @@
-# Mulberry [![version](https://img.shields.io/github/v/tag/b0o/mulberry?style=flat&color=yellow&label=version&sort=semver)](https://github.com/b0o/mulberry/releases) [![license: MIT](https://img.shields.io/github/license/b0o/mulberry?style=flat&color=green)](https://mit-license.org) [![Build Status](https://img.shields.io/github/workflow/status/b0o/mulberry/test)](https://github.com/b0o/mulberry/actions/workflows/test.yaml)
+# Mulberry [![license: MIT](https://img.shields.io/github/license/b0o/mulberry?style=flat&color=green)](https://mit-license.org) [![Build Status](https://img.shields.io/github/workflow/status/b0o/mulberry/test)](https://github.com/b0o/mulberry/actions/workflows/test.yaml)
 
 Mulberry is a single-file Lua BDD library for testing Neovim plugins. Its goal is to make testing your plugins as easy and delicious as possible.
 
