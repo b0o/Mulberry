@@ -1,38 +1,62 @@
 Describe('mulberry', function()
-  It('supports numbers', function()
-    Expect(1).To.Be.Positive()
-    Expect(0).To.Not.Be.Positive()
-    Expect(-1).To.Be.Negative()
-    Expect(0).To.Be.Zero()
+  Describe('numbers', function()
+    It('can match by positivity and negativity', function()
+      Expect(1).To.Be.Positive()
+      Expect(0).To.Not.Be.Positive()
+      Expect(-1).To.Be.Negative()
+    end)
 
-    Expect(0).To.Be.Even()
-    Expect(1).To.Be.Odd()
-    Expect(2).To.Not.Be.Odd()
-    Expect('2').To.Not.Be.Even()
+    It('can match by identity', function()
+      Expect(0).To.Be.Zero()
+    end)
 
-    Expect(10).To.Be.InRange(0, 100)
-    Expect(100).To.Not.Be.InRangeExclusive(0, 100)
+    It('can match by evenness and oddness', function()
+      Expect(0).To.Be.Even()
+      Expect(1).To.Be.Odd()
+      Expect(2).To.Not.Be.Odd()
+      Expect('2').To.Not.Be.Even()
+    end)
 
-    Expect(8).To.Be['>'](7)
-    Expect(8).To.Be['<'](10)
-    Expect(8).To.Be.Le(8)
-    Expect(8).To.Not.Be.GreaterThan(8)
-    Expect(8).To.Not.Be['>='](9)
+    It('can match by ranges', function()
+      Expect(10).To.Be.InRange(0, 100)
+      Expect(100).To.Not.Be.InRangeExclusive(0, 100)
+
+      Expect(8).To.Be['>'](7)
+      Expect(8).To.Be['<'](10)
+      Expect(8).To.Be.Le(8)
+      Expect(8).To.Not.Be.GreaterThan(8)
+      Expect(8).To.Not.Be['>='](9)
+    end)
   end)
 
-  It('supports identities', function()
-    Expect(true).To.Be.True()
-    Expect(nil).To.Be.Nil()
-    Expect(true).To.Not.Be.Nil()
+  Describe('booleans', function()
+    It('can match true and false', function()
+      Expect(true).To.Be.True()
+      Expect(false).To.Be.False()
+      Expect(true).To.Not.Be.False()
+      Expect(false).To.Not.Be.True()
+    end)
   end)
 
-  It('supports strings', function()
-    Expect('foo').To.Match 'oo'
-    Expect('foo').To.Include 'oo'
-    Expect('oo').To.Be.In 'foo'
-    Expect('foo').To.Not.Match 'bar'
-    Expect('foobarqux()').To.Match(vim.regex [[\w\+()]])
-    Expect('foobarqux ()').To.Not.Match(vim.regex [[\w\+()]])
+  Describe('nil', function()
+    It('can match nil', function()
+      Expect(true).To.Not.Be.Nil()
+      Expect(nil).To.Be.Nil()
+    end)
+  end)
+
+  Describe('strings', function()
+    It('can match substrings', function()
+      Expect('foo').To.Match 'oo'
+      Expect('foo').To.Include 'oo'
+      Expect('oo').To.Be.In 'foo'
+      Expect('foo').To.Not.Match 'bar'
+    end)
+
+    It('can match by regular expression', function()
+      Expect('foobarqux()').To.Match(vim.regex [[\w\+()]])
+      Expect('foobarqux ()').To.Not.Match(vim.regex [[\w\+()]])
+    end)
   end)
 
   It('supports types', function()
