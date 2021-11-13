@@ -8,6 +8,26 @@
 --
 -- Copyright 2021 Maddison Hellstrom
 -- Released under the MIT License
+--
+-- TODO: Matchers
+--  - Throw()
+--  - CalledWith()
+-- TODO: support lifecycle events:
+--  - BeforeSuite
+--  - BeforeEach
+--  - AfterEach
+--  - AfterSuite
+--  - etc...
+-- TODO: Nested Describes
+-- TODO: Helpers for mocks, stubs
+-- TODO: User extensions:
+--  - Matchers
+--  - Operators
+-- TODO: Pluggable formatters
+-- TODO: TestData loading
+-- TODO: Perf/Benchmark testing
+-- TODO: Random pinning
+-- TODO: Date pinning
 
 local operators = {}
 local matchers = {}
@@ -234,6 +254,16 @@ matchers.Nil = id(nil)
 matchers.Empty = function(actual)
   return #actual == 0
 end
+
+matchers.EmptyString = {
+  operators.A.String,
+  matchers.Empty,
+}
+
+matchers.EmptyTable = {
+  operators.A.Table,
+  matchers.Empty,
+}
 
 ---- Booleans
 
@@ -464,25 +494,6 @@ matchers.ThrowError = function(actual)
 end
 
 ------ Test Runner Machinery
--- TODO: Matchers
---  - Throw()
---  - CalledWith()
--- TODO: support lifecycle events:
---  - BeforeSuite
---  - BeforeEach
---  - AfterEach
---  - AfterSuite
---  - etc...
--- TODO: Nested Describes
--- TODO: Helpers for mocks, stubs
--- TODO: User extensions:
---  - Matchers
---  - Operators
--- TODO: Pluggable formatters
--- TODO: TestData loading
--- TODO: Perf/Benchmark testing
--- TODO: Random pinning
--- TODO: Date pinning
 
 local function indent(n, s, p)
   p = p or n > 0 and '│ ' or ''

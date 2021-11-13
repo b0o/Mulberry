@@ -57,6 +57,14 @@ Describe('mulberry', function()
       Expect('foobarqux()').To.Match(vim.regex [[\w\+()]])
       Expect('foobarqux ()').To.Not.Match(vim.regex [[\w\+()]])
     end)
+
+    It('can match empty string', function()
+      Expect('').To.Be.Empty()
+      Expect('').To.Be.EmptyString()
+      Expect('foo').To.Not.Be.Empty()
+      Expect('foo').To.Not.Be.EmptyString()
+      Expect({}).To.Not.Be.EmptyString()
+    end)
   end)
 
   It('supports types', function()
@@ -95,6 +103,10 @@ Describe('mulberry', function()
 
     Expect({ foo = 'bar', qux = 'ham' }).To.Not.Be.A.ListLike()
     Expect({ 1, 2, 3, qux = 'ham' }).To.Not.Be.A.ListLike()
+
+    Expect({}).To.Be.EmptyTable()
+    Expect({ 1, 2, 3 }).To.Not.Be.EmptyTable()
+    Expect('').To.Not.Be.EmptyTable()
   end)
 
   It('supports functions', function()
