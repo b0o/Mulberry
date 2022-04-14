@@ -538,7 +538,14 @@ local function compare(op, actual, expected, name, desc, ctx)
   end
 
   local s = indent(4, ('%s<%s> = %s'):format(name, type(actual), inspect(actual)), '  ')
-  msg = vim.list_extend(msg, { '      but got', s })
+  vim.list_extend(msg, { '      but got', s })
+  vim.list_extend(
+    msg,
+    vim.tbl_map(function(l)
+      return string.gsub(l, '\t', '  ')
+    end, vim.split(debug.traceback('', 2), '\n'))
+  )
+  table.insert(msg, '')
   log(ctx, indent(1, table.concat(msg, '\n')))
 
   return false
