@@ -6,28 +6,8 @@
 -- It's still alpha software. Don't rely on it, it's not fully tested and
 -- surely has bugs. You've been warned.
 --
--- Copyright 2021 Maddison Hellstrom
+-- Copyright 2021-2022 Maddison Hellstrom
 -- Released under the MIT License
---
--- TODO: Matchers
---  - Throw()
---  - CalledWith()
--- TODO: support lifecycle events:
---  - BeforeSuite
---  - BeforeEach
---  - AfterEach
---  - AfterSuite
---  - etc...
--- TODO: Nested Describes
--- TODO: Helpers for mocks, stubs
--- TODO: User extensions:
---  - Matchers
---  - Operators
--- TODO: Pluggable formatters
--- TODO: TestData loading
--- TODO: Perf/Benchmark testing
--- TODO: Random pinning
--- TODO: Date pinning
 
 local operators = {}
 local matchers = {}
@@ -494,6 +474,25 @@ matchers.ThrowError = function(actual)
 end
 
 ------ Test Runner Machinery
+-- TODO: Matchers
+--  - Throw()
+--  - CalledWith()
+-- TODO: support lifecycle events:
+--  - BeforeSuite
+--  - BeforeEach
+--  - AfterEach
+--  - AfterSuite
+--  - etc...
+-- TODO: Nested Describes
+-- TODO: Helpers for mocks, stubs
+-- TODO: User extensions:
+--  - Matchers
+--  - Operators
+-- TODO: Pluggable formatters
+-- TODO: TestData loading
+-- TODO: Perf/Benchmark testing
+-- TODO: Random pinning
+-- TODO: Date pinning
 
 local function indent(n, s, p)
   p = p or n > 0 and '│ ' or ''
