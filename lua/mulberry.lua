@@ -420,7 +420,7 @@ end
 
 matchers.In = function(actual, expected)
   if type(expected) == 'table' then
-    return expected[actual] ~= nil or vim.tbl_contains(expected, actual)
+    return expected[actual] ~= nil or vim.list_contains(expected, actual)
   end
   if type(expected) == 'string' or type(expected) == 'userdata' then
     return runMatcher(matchers.Match, expected, actual)
