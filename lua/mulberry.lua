@@ -418,9 +418,22 @@ end
 
 ---- Tables and Strings
 
+local function list_contains(t, value)
+  if vim.list_contains then
+    return vim.list_contains(t, value)
+  end
+  -- for nvim < v0.10
+  for _, v in ipairs(t) do
+    if v == value then
+      return true
+    end
+  end
+  return false
+end
+
 matchers.In = function(actual, expected)
   if type(expected) == 'table' then
-    return expected[actual] ~= nil or vim.list_contains(expected, actual)
+    return expected[actual] ~= nil or list_contains(expected, actual)
   end
   if type(expected) == 'string' or type(expected) == 'userdata' then
     return runMatcher(matchers.Match, expected, actual)
