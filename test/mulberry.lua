@@ -107,6 +107,12 @@ Describe('mulberry', function()
     Expect({}).To.Be.EmptyTable()
     Expect({ 1, 2, 3 }).To.Not.Be.EmptyTable()
     Expect('').To.Not.Be.EmptyTable()
+
+    Expect({ 1, 2, 3 }).To.Be.A.ListLike()
+    Expect({ 1, 2, 3 }).To.Not.Be.A.DictLike()
+    Expect({ foo = 'bar', qux = 'ham' }).To.Be.A.DictLike()
+    Expect({ foo = 'bar', qux = 'ham' }).To.Not.Be.A.ListLike()
+    Expect('foo').To.Not.Be.A.DictLike()
   end)
 
   It('supports functions', function()

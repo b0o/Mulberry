@@ -125,15 +125,21 @@ operators.An = operators.A
 
 -- A table that only has integer keys
 -- The empty table is a ListLike
-operators.A.ListLike = function(actual)
-  return vim.tbl_islist(actual)
-end
+operators.A.ListLike = {
+  operators.A.Table,
+  function(actual)
+    return vim.tbl_islist(actual)
+  end,
+}
 
 -- A table that only has kv pairs
 -- The empty table is not DictLike
-operators.A.DictLike = function(actual)
-  return not runMatcher(operators.A.ListLike, actual)
-end
+operators.A.DictLike = {
+  operators.A.Table,
+  function(actual)
+    return not runMatcher(operators.A.ListLike, actual)
+  end,
+}
 
 operators.An.Int = {
   operators.A.Number,
