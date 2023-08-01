@@ -2,8 +2,6 @@
 
 Mulberry is a single-file Lua BDD library for testing Neovim plugins. Its goal is to make testing your plugins as easy and delicious as possible.
 
-**Mulberry is still in alpha. Its API will change, a lot! Don't use it yet!**
-
 An example Mulberry test suite:
 
 ```lua
