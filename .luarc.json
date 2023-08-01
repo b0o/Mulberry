@@ -1,0 +1,8 @@
+{
+  "workspace.library": [
+    "$HOME/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+    "/usr/share/nvim/runtime/lua",
+    "${3rd}/luv/library"
+  ],
+  "diagnostics.globals": ["Describe", "It", "Expect"]
+}
