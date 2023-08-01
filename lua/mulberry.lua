@@ -6,7 +6,7 @@
 -- It's still alpha software. Don't rely on it, it's not fully tested and
 -- surely has bugs. You've been warned.
 --
--- Copyright 2021-2022 Maddison Hellstrom
+-- Copyright 2021-2023 Maddison Hellstrom
 -- Released under the MIT License
 
 local operators = {}

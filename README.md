@@ -48,6 +48,6 @@ N/a
 
 ## License
 
-&copy; 2021 Maddison Hellstrom
+&copy; 2021-2023 Maddison Hellstrom
 
 Released under the MIT License.
