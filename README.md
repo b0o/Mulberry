@@ -41,7 +41,8 @@ end)
 ## Changelog
 
 ```
-N/a
+v0.0.2                                                                2023-07-31
+  fix: matchers.In should check for existence of keys, not values
 ```
 
 ## License

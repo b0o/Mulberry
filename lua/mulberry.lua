@@ -1,4 +1,4 @@
----- Mulberry v0.0.1
+---- Mulberry v0.0.2
 --
 -- https://github.com/b0o/mulberry
 --
