@@ -41,6 +41,9 @@ end)
 ## Changelog
 
 ```
+v0.0.3                                                                2023-07-31
+  fix: ensure ListLike and DictLike values are tables
+  fix: implement list_contains for nvim < v0.10
 v0.0.2                                                                2023-07-31
   fix: matchers.In should check for existence of keys, not values
 ```
