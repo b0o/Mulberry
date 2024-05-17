@@ -3,8 +3,6 @@
 -- https://github.com/b0o/mulberry
 --
 -- Mulberry is a single-file BDD testing library for Lua targeting Neovim.
--- It's still alpha software. Don't rely on it, it's not fully tested and
--- surely has bugs. You've been warned.
 --
 -- Copyright 2021-2024 Maddison Hellstrom
 -- Released under the MIT License
